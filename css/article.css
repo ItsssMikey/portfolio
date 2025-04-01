@@ -1,0 +1,14 @@
+
+
+
+#article-content {
+    flex: 1; /*f Takes up remaining space */
+    margin-top: 200px;
+    width: 60%; /* Default for larger screens */
+    max-width: 900px; /* Prevents content from becoming too wide */
+    width: 700px;
+}
+
+
+
+ 

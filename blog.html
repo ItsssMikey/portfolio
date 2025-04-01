@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- For Font Awesome icons -->
+</head>
+<body>
+
+
+
+    <!-- Navigation Bar -->
+    <div class="topnav">
+        <a href="blog.html">Blog</a>
+        <a href="prosjekter.html">Projects</a>
+        <a href="coolstuff.html">Cool Stuff</a>
+    </div>
+
+    <!-- Dark Mode Button -->
+    <button id="dark-mode" onclick="myFunction()"> 
+        <span class="fa-solid fa-circle-half-stroke"></span>
+    </button>
+
+    <!-- Logo -->
+    <a href="index.html">
+        <img src="./media/logo.png" alt="logo" class="logo-img">
+    </a>
+
+    <!-- Main Content -->
+    <div class="main_cont">
+        <h1>A collection of thoughts, ideas and random brainstorms</h1>
+
+        <div id="blog-list"></div>
+
+        <script>
+            const articles = [
+                { title: "How to Build a Blog", slug: "how-to-build-a-blog", summary: "Learn to build a blog using HTML, CSS, and JavaScript." },
+                { title: "JavaScript Tips", slug: "javascript-tips", summary: "Improve your JavaScript skills with these tips." },
+                // Add more articles here if needed
+            ];
+
+            const blogList = document.getElementById("blog-list");
+
+            articles.forEach(article => {
+                const articleDiv = document.createElement("div");
+                articleDiv.innerHTML = `<h2><a href="article.html?slug=${article.slug}">${article.title}</a></h2><p>${article.summary}</p>`;
+                blogList.appendChild(articleDiv);
+            });
+
+            // Dark Mode Toggle Functionality
+            function myFunction() {
+                const body = document.body;
+                body.classList.toggle("dark-mode");
+
+                // Change icon to reflect mode
+                const icon = document.querySelector("#dark-mode span");
+                if (body.classList.contains("dark-mode")) {
+                    icon.classList.remove("fa-circle-half-stroke");
+                    icon.classList.add("fa-sun");
+                } else {
+                    icon.classList.remove("fa-sun");
+                    icon.classList.add("fa-circle-half-stroke");
+                }
+            }
+        </script>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+          <div class="footer-columns">
+            <div class="column"><p id="footertitle">About</p> <br> Charities <br> Services <br> Why the airballoon? <br> Bio </div>
+            <div class="column"><p id="footertitle">Resources</p> <br> Books <br> Gratitude <br> Tools </div>
+            <div class="column"><p id="footertitle">Connect</p> <br> Contact <br> LinkedIn  <br> Instagram <br> Github</div>
+          </div>
+        </div>
+     
+        <ul id="social">
+          <li id="instagram-link" class="fa-brands fa-instagram"></li>
+          <li id="email-link" class="fa-regular fa-envelope"></li>
+          <li id="github-link" i class="fa-brands fa-github"></i>
+            <li id="linkedin-link"i class="fa-brands fa-linkedin"></i>
+        </ul>
+        <span id="watermark">© 2025 Michael Huse. All rights reserved.</span>
+
+      </footer>
+
+</body>
+</html>

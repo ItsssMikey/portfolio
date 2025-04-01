@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./javascript/script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/62c4e322ec.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+    <button id="dark-mode" onclick="myFunction()"> <span class="fa-solid fa-circle-half-stroke"></span></button>
+    <a href="index.html"><img src="./media/logo.png" alt="logo" class="logo-img"></a>
+
+
+    <div class="main_cont">
+
+        <div class="back-container">
+            <a href="blog.html" class="back-arrow"> <i class="fa-solid fa-arrow-left"></i> </a>
+        </div>
+       
+
+    <!-- Article Content -->
+    <div class="div-article-container">
+        <h1 id="article-title">Loading Article...</h1>
+        <div id="article-content">Please wait while we load the article content...</div>
+    </div>
+
+    <script>
+ document.addEventListener("DOMContentLoaded", function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const slug = urlParams.get("slug");
+
+    if (slug) {
+        fetch(`articles/${slug}.html`)
+            .then(response => {
+                if (!response.ok) throw new Error("Article not found");
+                return response.text();
+            })
+            .then(content => {
+                console.log("Fetched Content:", content); // Debugging
+
+                // Strip out any <h1> tags from the fetched content
+                const cleanedContent = content.replace(/<h1[^>]*>.*?<\/h1>/i, '');
+
+                // Clear the existing article container to avoid duplicates
+                document.getElementById("article-content").innerHTML = "";
+
+                // Insert the cleaned content
+                document.getElementById("article-content").innerHTML = cleanedContent;
+
+                // Set the title dynamically based on the slug
+                const formattedTitle = slug.replace(/-/g, " ").replace(".html", "");
+                document.getElementById("article-title").innerText = formattedTitle;
+                document.title = formattedTitle;
+            })
+            .catch(() => {
+                document.getElementById("article-title").innerText = "Article Not Found";
+                document.getElementById("article-content").innerHTML = "<p>Sorry, this article does not exist.</p>";
+            });
+    } else {
+        document.getElementById("article-title").innerText = "No Article Selected";
+        document.getElementById("article-content").innerHTML = "<p>Please select an article from the homepage.</p>";
+    }
+});
+
+    </script>
+
+</div>
+    
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-columns">
+                <div class="column">
+                    <p id="footertitle">About</p>
+                    <br>Charities <br>Services
+                </div>
+                <div class="column">
+                    <p id="footertitle">Info</p>
+                    <br>Books <br>Gratitude
+                </div>
+                <div class="column">
+                    <p id="footertitle">Connect</p>
+                    <br>Contact <br>LinkedIn <br>Instagram <br>Github
+                </div>
+            </div>
+        </div>
+
+        <ul id="social">
+            <li id="instagram-link" class="fa-brands fa-instagram"></li>
+            <li id="email-link" class="fa-regular fa-envelope"></li>
+            <li id="github-link" class="fa-brands fa-github"></li>
+            <li id="linkedin-link" class="fa-brands fa-linkedin"></li>
+        </ul>
+
+        <span id="watermark">© 2025 Michael Huse. All rights reserved.</span>
+    </footer>
+
+</body>
+</html>

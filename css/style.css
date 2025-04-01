@@ -1,0 +1,347 @@
+/* Add a black background color to the top navigation */
+
+
+body {
+    font-family: 'Lato', sans-serif;  
+    color: #222222;
+    margin:0;
+    padding:0; 
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  /* Adjusts the main container */
+  .main_cont {
+      width: 90%; /* Expands content */
+      max-width: 100%; /* Prevents fixed sizing issues */
+      padding: 15px; /* Adds spacing */
+      margin-top: 100px; /* Adjust for better spacing */
+  }
+
+  /* Ensures #about stacks correctly */
+  #about {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 90%; /* Make it responsive */
+      max-width: 100%;
+  }
+
+  /* Make articles take up full width */
+  #article-content {
+      width: 90%;
+      max-width: 100%;
+  }
+
+  /* Adjusts blog list for better stacking */
+  #blog-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+  }
+
+  #blog-list div {
+      width: 90%;
+      max-width: 100%;
+  }
+  
+  footer {
+    align-items: center; /* Align items vertically in the center */
+  }
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the entire container */
+    width: 100%;
+  }
+
+  .footer-columns {
+    display: flex;
+    justify-content: center; /* Centers the columns horizontally */
+    align-items: center; /* Align items vertically in the center */
+    gap: 20px; /* Add some space between columns */
+    width: 90%; /* Prevent full-width stretching */
+  }
+
+  .column {
+    width: 30%; /* Each column takes up 30% of the container */
+    text-align: center;
+    padding: 5px;
+  }
+  
+  /* Optional: Reduce font size for smaller screens */
+  .footer-columns p {
+    font-size: 12px; /* Smaller font size for titles */
+  }
+
+  /* Adjust the social media icons */
+  #social {
+    gap: 15px; /* Reduced gap between icons */
+    margin-top: 20px;
+  }
+
+  /* Watermark adjustment */
+  #watermark {
+    font-size: 10px;
+    margin-top: 10px;
+  }
+}
+
+#div-article-container:hover {
+background-color: #bcbcbc;
+}
+
+
+
+.dark-mode {
+    #dark-mode {
+      color: white;
+    }
+    .topnav{
+      background-color: #222;
+      color:white;
+    }
+  }
+
+  #dark-mode {
+    position: fixed;
+    top: 55px; /* Adjust vertical position */
+    right: 30px; /* Push it to the right */
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background: transparent; /* Removes background */
+    font-size: 18px;
+  }
+
+  .main_cont {
+    flex: 1; /*f Takes up remaining space */
+    min-height: 80vh; /* Ensures it always fills the screen */
+    margin-top: 200px;
+    width: 60%; /* Default for larger screens */
+    max-width: 900px; /* Prevents content from becoming too wide */
+    margin: 200px auto; /* Centers content */
+}
+
+
+
+
+.topnav {
+  border: 1px solid rgba(200, 200, 200, 0.2); /* Lighter gray with 50% opacity */
+  border-radius: 120px;
+  border-style: solid;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.1); /* Horizontal, Vertical, Blur, Color */
+  overflow: hidden;
+  position: fixed;
+  top: 8%; /* Keeps it a bit from the top */
+  left: 50%; /* Positions it in the middle horizontally */
+  transform: translateX(-50%); /* Corrects the position by half of its width */
+  display: flex;
+  justify-content: center;  /* Centers horizontally */
+  align-items: center;  /* Centers vertically */
+  width: 300px;  /* Controls the length */
+  height: 45px; /* Controls the height */
+  border-radius: 150px; /* Soft rounded edges */
+  z-index: 1000; /* Ensures it stays on top */
+  background-color: white;
+}
+
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    text-align: center;
+    padding: 6px 16px;
+    text-decoration: none;
+    font-size: 14px;
+    color: inherit; /* Inherits color from parent element */
+    transition: font-weight 0.2s ease-in-out; /* Smooth transition */
+  }
+  /*transform: scale(1.03); /* Slightly enlarge the link */
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    font-weight: bold; /* Makes text bolder */
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    color: white;
+    border:#f2f2f2;
+    border-radius: 25px;
+  }
+ 
+
+  #about {
+    width: 700px;
+  }
+  
+  .back-container {
+    display: flex;
+    justify-content: flex-start; /* Aligns to the left */
+    padding: 10px;
+}
+
+.back-arrow {
+    display: inline-flex; /* Keeps icon and text aligned */
+    align-items: center; /* Centers the arrow with the text */
+    text-decoration: none;
+    font-size: 22px;
+    color: #6a6a6a;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    background: none;
+    transition: all 0.3s ease-in-out; /* Applies transition to all properties */
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.back-arrow:hover {
+    
+    color: black;
+    font-weight: bolder;
+}
+
+  
+  #article-content {
+    width: 700px;  
+}
+
+  footer {
+    height: auto;
+    width: 100%;
+    padding: 20px;
+    background-color: #f1f1f1;
+    text-align: center;
+    font-size: 14ppx;
+    color: black;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: flex-start; /* Align other content to the top */
+}
+
+.footer-container {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* 9 equal columns */
+  gap: 10px; /* Space between columns */
+  font-size: 15px;
+}
+
+.footer-columns {
+  grid-column: 2 / 5; /* Places this div in columns 2, 3, and 4 */
+  display: flex;
+  justify-content: space-between; /* Spreads columns evenly */
+  line-height: 1.5;
+  color: grey;
+  font-size: 14px;
+}
+
+.column {
+  flex: 1; /* Ensures equal width for the columns */
+}
+
+#footertitle {
+  margin-bottom: 0.5px;
+  text-decoration: underline;
+}
+
+ #watermark{
+  margin-top: auto; /* Pushes watermark to the bottom */
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+#social {
+  color: black;
+  margin-top: auto; /* Pushes watermark to the bottom */
+  gap: 20px; /* Adjust space between items */
+  display: flex;
+  padding: 0;
+  margin: 5;
+  justify-content: center;
+}
+
+#social li {
+  font-size: 24px; /* Adjust icon size */
+  color: black; /* Icon color */
+  cursor: pointer;
+ 
+}
+
+.logo-img {
+  width: 100px; /* Adjust the width */
+  height: auto; /* Maintain aspect ratio */
+  margin-left: 2%;
+  margin-top: 2%;
+  position: fixed;
+}
+
+
+
+#blog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Blog Item (Each Article) */
+#blog-list div {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: left;
+}
+
+/* Blog Item Hover Effect */
+#blog-list div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Blog Titles */
+#blog-list h2 {
+  margin: 0 0 10px;
+  font-size: 22px;
+}
+
+#blog-list h2 a {
+  color: #222222;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+#blog-list h2 a:hover {
+ color: #222222;
+}
+
+/* Blog Summary */
+#blog-list p {
+  margin: 0;
+  color: #666;
+  font-size: 16px;
+}
+
+/* Dark Mode Styling */
+.dark-mode {
+  background-color: #222;
+  color: #ddd;
+}
+
+.dark-mode #blog-list div {
+  background: #333;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+
+
+
