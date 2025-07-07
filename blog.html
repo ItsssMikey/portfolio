@@ -35,25 +35,56 @@
         <div id="blog-list"></div>
 
         <script>
-            const articles = [
-                { title: "How to Build a Blog", slug: "how-to-build-a-blog", summary: "Learn to build a blog using HTML, CSS, and JavaScript." },
-                { title: "JavaScript Tips", slug: "javascript-tips", summary: "Improve your JavaScript skills with these tips." },
-                // Add more articles here if needed
-            ];
-
+           const articles = [
+    {
+        title: "How to Build a Blog",
+        slug: "how-to-build-a-blog",
+        summary: "Learn to build a blog using HTML, CSS, and JavaScript.",
+        authors: ["Alex", "Jamie"],
+        date: "2025-04-05",
+        subject: "Web Development"
+    },
+    {
+        title: "JavaScript Tips",
+        slug: "javascript-tips",
+        summary: "Improve your JavaScript skills with these tips.",
+        authors: ["Taylor"],
+        date: "2025-03-22",
+        subject: "JavaScript"
+    },
+    // Add more articles here
+];
             const blogList = document.getElementById("blog-list");
-
-            articles.forEach(article => {
+        
+            articles.forEach((article) => {
                 const articleDiv = document.createElement("div");
-                articleDiv.innerHTML = `<h2><a href="article.html?slug=${article.slug}">${article.title}</a></h2><p>${article.summary}</p>`;
-                blogList.appendChild(articleDiv);
-            });
+                articleDiv.innerHTML = `
+    <div class="article-content">
+        <h2><a href="article.html?slug=${article.slug}">${article.title}</a></h2>
+        <p><strong>Summary:</strong> ${article.summary}</p>
+    </div>
+    <div class="meta">
+        <p><strong>Authors:</strong> ${article.authors.join(", ")}</p>
+        <p><strong>Date:</strong> ${article.date}</p>
+        <p><strong>Subject:</strong> ${article.subject}</p>
+    </div>
 
+      
+`;
+const hr = document.createElement("hr");
+hr.classList.add("article-divider");
+articleDiv.appendChild(hr);
+
+blogList.appendChild(articleDiv);
+    });
+            
+
+        
             // Dark Mode Toggle Functionality
             function myFunction() {
                 const body = document.body;
                 body.classList.toggle("dark-mode");
-
+        
                 // Change icon to reflect mode
                 const icon = document.querySelector("#dark-mode span");
                 if (body.classList.contains("dark-mode")) {

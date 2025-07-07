@@ -3,7 +3,6 @@
 
 body {
     font-family: 'Lato', sans-serif;  
-    color: #222222;
     margin:0;
     padding:0; 
     display: flex;
@@ -122,7 +121,6 @@ background-color: #bcbcbc;
 }
 
 .back-arrow:hover {
-    
     color: black;
     font-weight: bolder;
 }
@@ -203,7 +201,6 @@ background-color: #bcbcbc;
 }
 
 
-
 #blog-list {
   display: flex;
   flex-direction: column;
@@ -216,16 +213,11 @@ background-color: #bcbcbc;
   background: white;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   text-align: left;
 }
 
-/* Blog Item Hover Effect */
-#blog-list div:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
+
 
 /* Blog Titles */
 #blog-list h2 {
@@ -239,9 +231,7 @@ background-color: #bcbcbc;
   transition: color 0.3s ease;
 }
 
-#blog-list h2 a:hover {
- color: #222222;
-}
+
 
 /* Blog Summary */
 #blog-list p {
@@ -262,5 +252,47 @@ background-color: #bcbcbc;
 }
 
 
+.meta {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: #555;
+  background-color: #f8f8f8;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-top: 20px;  /* Space above metadata */
+  margin-bottom: 10px; /* Tight spacing before the hr */
+}
+
+.article-divider {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 0; /* Removes default spacing */
+}
 
 
+
+.typewriter {
+  font-family: monospace;
+  white-space: pre-wrap; /* allows \n to wrap as new lines */
+  border-right: 2px solid black;
+  display: inline-block;
+  animation: blink-caret 0.75s step-end infinite;
+  font-size: 1.5rem;
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: black;
+  }
+}
+
+ 
+@keyframes blink {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: black; }
+}
