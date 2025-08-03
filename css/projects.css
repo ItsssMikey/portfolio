@@ -1,0 +1,97 @@
+/* Section Layout */
+.my-projects-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 200px;
+  min-height: 80vh; /* Ensures it always fills the screen */
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.8rem;
+  color: #1a1a1a;
+}
+
+/* Grid Layout */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.project-box {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f0f0; /* Slightly darker than background */
+  padding: 1rem;
+  text-align: center; /* Ensures centered content */
+}
+
+.project-box:hover {
+  background-color: #e5e5e5;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Centered Logo Box */
+.project-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.05); /* Slightly darker background behind logos */
+  border-radius: 8px;
+  width: 220px; /* Fixed width so it centers consistently */
+  height: 200px;
+  overflow: hidden;
+  padding: 10px;
+  margin: 0 auto 1rem auto; /* Centers the box horizontally */
+}
+
+.project-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Prevents stretching */
+  display: block;
+}
+
+/* Content inside card */
+.project-content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.project-content h2 {
+  font-size: 1.5rem;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.project-content p {
+  font-size: 1rem;
+  color: #555;
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+
+.project-button {
+  background-color: #343434;
+  color: rgb(207, 207, 207);
+  padding: 0.7rem 1.2rem;
+  text-decoration: none;
+  border-radius: 6px;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+
+.project-button:hover {
+  background-color: #000000;
+}
+
+

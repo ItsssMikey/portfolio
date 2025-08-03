@@ -1,298 +1,214 @@
-/* Add a black background color to the top navigation */
-
-
+/* Base Layout */
 body {
-    font-family: 'Lato', sans-serif;  
-    margin:0;
-    padding:0; 
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
-
-#div-article-container:hover {
-background-color: #bcbcbc;
+.main_cont {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    max-width: 900px;
+    margin: 200px auto;
 }
 
-
-
+/* Dark Mode */
 .dark-mode {
-    #dark-mode {
-      color: white;
-    }
-    .topnav{
-      background-color: #222;
-      color:white;
-    }
-  }
+    background-color: #222;
+    color: #ddd;
+}
 
-  #dark-mode {
+.dark-mode #dark-mode {
+    color: white;
+}
+
+.dark-mode .topnav {
+    background-color: #222;
+    color: white;
+}
+
+.dark-mode #blog-list div {
+    background: #333;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode footer {
+    background-color: #1a1a1a;
+    color: #ddd;
+}
+
+.dark-mode #social a {
+    color: #ddd;
+}
+
+.dark-mode #social a:hover {
+    color: #fff;
+}
+
+/* Dark Mode Button */
+#dark-mode {
     position: fixed;
-    top: 55px; /* Adjust vertical position */
-    right: 30px; /* Push it to the right */
+    top: 55px;
+    right: 30px;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    background: transparent; /* Removes background */
+    background: transparent;
     font-size: 18px;
-  }
-
-  .main_cont {
-    flex: 1; /*f Takes up remaining space */
-    min-height: 80vh; /* Ensures it always fills the screen */
-    margin-top: 200px;
-    width: 60%; /* Default for larger screens */
-    max-width: 900px; /* Prevents content from becoming too wide */
-    margin: 200px auto; /* Centers content */
 }
 
-
+/* Top Navigation */
 .topnav {
-  border: 1px solid rgba(200, 200, 200, 0.2); /* Lighter gray with 50% opacity */
-  border-radius: 120px;
-  border-style: solid;
-  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.1); /* Horizontal, Vertical, Blur, Color */
-  overflow: hidden;
-  position: fixed;
-  top: 8%; /* Keeps it a bit from the top */
-  left: 50%; /* Positions it in the middle horizontally */
-  transform: translateX(-50%); /* Corrects the position by half of its width */
-  display: flex;
-  justify-content: center;  /* Centers horizontally */
-  align-items: center;  /* Centers vertically */
-  width: 300px;  /* Controls the length */
-  height: 45px; /* Controls the height */
-  border-radius: 150px; /* Soft rounded edges */
-  z-index: 1000; /* Ensures it stays on top */
-  background-color: white;
+    border: 1px solid rgba(200, 200, 200, 0.2);
+    border-radius: 120px;
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: fixed;
+    top: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 45px;
+    z-index: 1000;
+    background-color: white;
 }
 
-  
-  /* Style the links inside the navigation bar */
-  .topnav a {
+.topnav a {
     text-align: center;
     padding: 6px 16px;
     text-decoration: none;
     font-size: 14px;
-    color: inherit; /* Inherits color from parent element */
-    transition: font-weight 0.2s ease-in-out; /* Smooth transition */
-  }
-  /*transform: scale(1.03); /* Slightly enlarge the link */
-  
-  /* Change the color of links on hover */
-  .topnav a:hover {
-    font-weight: bold; /* Makes text bolder */
-  }
-  
-  /* Add a color to the active/current link */
-  .topnav a.active {
+    color: inherit;
+    transition: font-weight 0.2s ease-in-out;
+}
+
+.topnav a:hover {
+    font-weight: bold;
+}
+
+.topnav a.active {
     color: white;
-    border:#f2f2f2;
+    border: #f2f2f2;
     border-radius: 25px;
-  }
- 
-
-  #about {
-    width: 700px;
-  }
-  
-  .back-container {
-    display: flex;
-    justify-content: flex-start; /* Aligns to the left */
-    padding: 10px;
 }
 
-.back-arrow {
-    display: inline-flex; /* Keeps icon and text aligned */
-    align-items: center; /* Centers the arrow with the text */
-    text-decoration: none;
-    font-size: 22px;
-    color: #6a6a6a;
-    width: 30px;
-    height: 30px;
-    border-radius: 5px;
-    background: none;
-    transition: all 0.3s ease-in-out; /* Applies transition to all properties */
-    border-radius: 50%;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-.back-arrow:hover {
-    color: black;
-    font-weight: bolder;
-}
-
-  
-  #article-content {
-    width: 700px;  
-}
-
-  footer {
+/* Logo */
+.logo-img {
+    width: 100px;
     height: auto;
+    margin-left: 2%;
+    margin-top: 2%;
+    position: fixed;
+}
+
+/* Footer */
+footer {
     width: 100%;
-    padding: 20px;
+    padding: 40px 0 20px 0;
     background-color: #f1f1f1;
-    text-align: center;
-    font-size: 14ppx;
+    font-size: 14px;
     color: black;
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    justify-content: flex-start; /* Align other content to the top */
+    flex-direction: column;
+    align-items: center;
 }
 
 .footer-container {
-  margin-top: 50px;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr); /* 9 equal columns */
-  gap: 10px; /* Space between columns */
-  font-size: 15px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 30px;
+    width: 100%;
+    
 }
 
 .footer-columns {
-  grid-column: 2 / 5; /* Places this div in columns 2, 3, and 4 */
-  display: flex;
-  justify-content: space-between; /* Spreads columns evenly */
-  line-height: 1.5;
-  color: grey;
-  font-size: 14px;
+    display: contents;
+    
 }
 
 .column {
-  flex: 1; /* Ensures equal width for the columns */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    line-height: 1.2;
+    font-size: 14px;
+    margin-top: 0;
+}
+
+.column a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.2s ease, font-weight 0.2s ease;
+    cursor: pointer;
+}
+
+.column a:hover {
+    font-weight: 600;
+    color: #333;
+}
+
+.column:nth-child(1) {
+    grid-column: 2 / 3;
+}
+
+.column:nth-child(2) {
+    grid-column: 3 / 4;
+}
+
+.column:nth-child(3) {
+    grid-column: 4 / 5;
 }
 
 #footertitle {
-  margin-bottom: 0.5px;
-  text-decoration: underline;
+    margin-bottom: 2px;
+    text-decoration: underline;
+    font-weight: bold;
+    margin-bottom: 12px;
 }
 
- #watermark{
-  margin-top: auto; /* Pushes watermark to the bottom */
-  font-size: 12px;
-  opacity: 0.7;
-}
-
+/* Social Icons */
 #social {
-  color: black;
-  margin-top: auto; /* Pushes watermark to the bottom */
-  gap: 20px; /* Adjust space between items */
-  display: flex;
-  padding: 0;
-  margin: 5;
-  justify-content: center;
+    grid-column: 6/ 8;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    list-style: none;
+    margin-top: 100px;
+    margin-bottom:0px;
 }
 
 #social li {
-  font-size: 24px; /* Adjust icon size */
-  color: black; /* Icon color */
-  cursor: pointer;
- 
+    font-size: 24px;
+    cursor: pointer;
 }
 
-.logo-img {
-  width: 100px; /* Adjust the width */
-  height: auto; /* Maintain aspect ratio */
-  margin-left: 2%;
-  margin-top: 2%;
-  position: fixed;
+#social a {
+    color: black;
+    transition: transform 0.2s ease, color 0.2s ease;
 }
 
-
-#blog-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 20px;
+#social a:hover {
+    transform: scale(1.3);
+    color: #555;
 }
 
-/* Blog Item (Each Article) */
-#blog-list div {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  text-align: left;
+#watermark {
+    grid-column: 6 / 8;
+    font-size: 12px;
+    opacity: 0.7;
+    text-align: center;
+    margin-bottom: 5px;
+    margin-top: -20px;
 }
 
-
-
-/* Blog Titles */
-#blog-list h2 {
-  margin: 0 0 10px;
-  font-size: 22px;
-}
-
-#blog-list h2 a {
-  color: #222222;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-
-
-/* Blog Summary */
-#blog-list p {
-  margin: 0;
-  color: #666;
-  font-size: 16px;
-}
-
-/* Dark Mode Styling */
-.dark-mode {
-  background-color: #222;
-  color: #ddd;
-}
-
-.dark-mode #blog-list div {
-  background: #333;
-  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-}
-
-
-.meta {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  font-size: 14px;
-  color: #555;
-  background-color: #f8f8f8;
-  padding: 10px 15px;
-  border-radius: 8px;
-  margin-top: 20px;  /* Space above metadata */
-  margin-bottom: 10px; /* Tight spacing before the hr */
-}
-
-.article-divider {
-  border: none;
-  border-top: 1px solid #ccc;
-  margin: 0; /* Removes default spacing */
-}
-
-
-
-.typewriter {
-  font-family: monospace;
-  white-space: pre-wrap; /* allows \n to wrap as new lines */
-  border-right: 2px solid black;
-  display: inline-block;
-  animation: blink-caret 0.75s step-end infinite;
-  font-size: 1.5rem;
-}
-
-@keyframes blink-caret {
-  from, to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: black;
-  }
-}
-
- 
-@keyframes blink {
-  0%, 100% { border-color: transparent; }
-  50% { border-color: black; }
-}

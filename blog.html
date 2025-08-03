@@ -9,25 +9,8 @@
 </head>
 <body>
 
-
-
-    <!-- Navigation Bar -->
-       <div class="topnav">
-      <a href="./blog.html">Blog</a>
-        <a href="./prosjekter.html">Projects</a>
-        <a href="./coolstuff.html">Cool Stuff</a>
-      </div>
-
-    <!-- Dark Mode Button -->
-    <button id="dark-mode" onclick="myFunction()"> 
-        <span class="fa-solid fa-circle-half-stroke"></span>
-    </button>
-
-    <!-- Logo -->
-    <a href="index.html">
-        <img src="./media/logo.png" alt="logo" class="logo-img">
-    </a>
-
+     <!-- Header gets injected here -->
+  <div id="header"></div>
     <!-- Main Content -->
     <div class="main_cont">
         <h1>A collection of thoughts, ideas and random brainstorms</h1>
@@ -76,46 +59,30 @@ hr.classList.add("article-divider");
 articleDiv.appendChild(hr);
 
 blogList.appendChild(articleDiv);
-    });
-            
-
-        
-            // Dark Mode Toggle Functionality
-            function myFunction() {
-                const body = document.body;
-                body.classList.toggle("dark-mode");
-        
-                // Change icon to reflect mode
-                const icon = document.querySelector("#dark-mode span");
-                if (body.classList.contains("dark-mode")) {
-                    icon.classList.remove("fa-circle-half-stroke");
-                    icon.classList.add("fa-sun");
-                } else {
-                    icon.classList.remove("fa-sun");
-                    icon.classList.add("fa-circle-half-stroke");
-                }
-            }
+    });        
         </script>
     </div>
 
-    <footer>
-        <div class="footer-container">
-          <div class="footer-columns">
-            <div class="column"><p id="footertitle">About</p> <br> Charities <br> Services <br> Why the airballoon? <br> Bio </div>
-            <div class="column"><p id="footertitle">Resources</p> <br> Books <br> Gratitude <br> Tools </div>
-            <div class="column"><p id="footertitle">Connect</p> <br> Contact <br> LinkedIn  <br> Instagram <br> Github</div>
-          </div>
-        </div>
-     
-        <ul id="social">
-          <li id="instagram-link" class="fa-brands fa-instagram"></li>
-          <li id="email-link" class="fa-regular fa-envelope"></li>
-          <li id="github-link" i class="fa-brands fa-github"></i>
-            <li id="linkedin-link"i class="fa-brands fa-linkedin"></i>
-        </ul>
-        <span id="watermark">© 2025 Michael Huse. All rights reserved.</span>
 
-      </footer>
+       <!-- Footer gets injected here -->
+  <div id="footer"></div>
 
+  <!-- JS to load components -->
+  <script>
+    async function loadComponent(id, url) {
+      try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error(`Failed to load ${url}`);
+        const html = await response.text();
+        document.getElementById(id).innerHTML = html;
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    loadComponent("header", "header.html");
+    loadComponent("footer", "footer.html");
+  </script>
+      
 </body>
 </html>

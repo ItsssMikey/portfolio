@@ -1,69 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hi</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <script src="./javascript/script.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- For Font Awesome icons -->
-    <link rel="stylesheet" href="./css/max768.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hi</title>
 
+  <!-- Your custom CSS -->
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/max768.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  <!-- Your JS (optional) -->
+  <script src="./javascript/script.js" defer></script>
 </head>
+
 <body>
+  <!-- Header gets injected here -->
+  <div id="header"></div>
 
-    <div class="topnav">
-      <a href="./blog.html">Blog</a>
-        <a href="./prosjekter.html">Projects</a>
-        <a href="./coolstuff.html">Cool Stuff</a>
-      </div>
+  <!-- Main content (must have flex: 1 in CSS) -->
+  <div class="main_cont">
+    <div id="about">
+      <h1>Dad, developer, boxer,<br>fitness and design enthusiast</h1>
+      <p>
+        Hey! I'm Michael. I’m into creating, building, and experimenting. Dive into some of my projects, ideas, and random musings—hopefully, something here sparks your creativity too.
+        <br><br><br>
+        <span class="typewriter"></span>
+      </p>
+    </div>
+  </div>
 
-     
-         <!-- Dark Mode Button -->
-    <button id="dark-mode" onclick="myFunction()"> 
-      <span class="fa-solid fa-circle-half-stroke"></span>
-  </button>
+  <!-- Footer gets injected here -->
+  <div id="footer"></div>
 
-  <!-- Logo -->
-  <a href="index.html">
-      <img src="./media/logo.png" alt="logo" class="logo-img">
-  </a>
+  <!-- JS to load components -->
+  <script>
+    async function loadComponent(id, url) {
+      try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error(`Failed to load ${url}`);
+        const html = await response.text();
+        document.getElementById(id).innerHTML = html;
+      } catch (error) {
+        console.error(error);
+      }
+    }
 
-
-      <div class="main_cont"> 
-    
-      <div id="about">
-        <h1> Dad, developer, boxer, <br> fitness and design enthusiast </h1>
-        <p>Hey! Im Michael. I’m into creating, building, and experimenting. Dive into some of my projects, ideas, and random musings—hopefully, something here sparks your creativity too. <br> <br> <br> 
-          
-          <span class="typewriter"></span>
-
-      </div>
-      
-      
-    
-</div>
-
-      <footer>
-        <div class="footer-container">
-          <div class="footer-columns">
-            <div class="column"><p id="footertitle">About</p> <br> Services <br> Air balloon? <br> Bio </div>
-            <div class="column"><p id="footertitle">Resources</p> <br> Books <br> Gratitude <br> Tools </div>
-            <div class="column"><p id="footertitle">Connect</p> <br> Contact <br> LinkedIn  <br> Instagram </div>
-          </div>
-        </div>
-     
-      
-        <ul id="social">
-          <li id="instagram-link" class="fa-brands fa-instagram"> <a href="https://www.instagram.com/michael__huse/"></a></li>
-          <li id="email-link" class="fa-regular fa-envelope"></li>
-          <li id="github-link" i class="fa-brands fa-github"></i>
-            <li id="linkedin-link"i class="fa-brands fa-linkedin"></i>
-        </ul>
-        <span id="watermark">© 2025 Michael Huse. All rights reserved.</span>
-      </footer>
-    
+    loadComponent("header", "header.html");
+    loadComponent("footer", "footer.html");
+  </script>
 </body>
 </html>

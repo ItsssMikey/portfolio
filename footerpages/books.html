@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Favorite Books</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <style>
+    .book-page {
+      max-width: 800px;
+      margin: 160px auto 60px;
+      padding: 0 20px;
+      font-family: 'Lato', sans-serif;
+    }
+
+    .book-page h1 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 10px;
+    }
+
+    .book-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .book-item {
+      margin-bottom: 30px;
+      border-left: 4px solid #222;
+      padding-left: 16px;
+      transition: border-color 0.3s;
+    }
+
+    .book-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    .book-note {
+      color: #444;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    .book-item:hover {
+      border-color: #999;
+    }
+
+    /* Dark mode support */
+    .dark-mode .book-item {
+      border-left-color: #eee;
+    }
+
+    .dark-mode .book-note {
+      color: #ccc;
+    }
+
+    .dark-mode .book-page h1 {
+      border-color: #444;
+    }
+  </style>
+</head>
+<body>
+
+    <button onclick="history.back()" class="back-arrow">← Back</button>
+    
+  <div class="book-page">
+    <h1>Favorite Books</h1>
+    <ul class="book-list">
+      <li class="book-item">
+        <div class="book-title">Atomic Habits – James Clear</div>
+        <div class="book-note">Tiny habits, huge results. The most actionable book I've read on personal growth.</div>
+      </li>
+      <li class="book-item">
+        <div class="book-title">The War of Art – Steven Pressfield</div>
+        <div class="book-note">Fights your inner Resistance. A must for creatives and entrepreneurs.</div>
+      </li>
+      <li class="book-item">
+        <div class="book-title">Meditations – Marcus Aurelius</div>
+        <div class="book-note">Stillness and wisdom. Stoicism distilled into bite-sized reflections.</div>
+      </li>
+      <li class="book-item">
+        <div class="book-title">Can’t Hurt Me – David Goggins</div>
+        <div class="book-note">Extreme? Yes. But it unlocked a mental toughness I didn’t know I had.</div>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>
